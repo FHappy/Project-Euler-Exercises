@@ -8,6 +8,12 @@ def quick_sort(arr)
   # choice for pivot is arbitrary, but last element is easier
   pivot = arr.pop  
 
+  # alternatively, we could choose 3 numbers arbitrary and then pick the middle value of the three
+  # as the pivot
+  # might as well do first, middle (or close enough to it), and last terms
+  
+  
+
   # going to be splitting into two arrays based on size relative to pivot
   left = []
   right = []
