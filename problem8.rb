@@ -49,16 +49,15 @@ large_num_str = "73167176531330624919225119674426574742355349194934
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"
 
-large_num = []
-
+large_num_str = large_num_str.slice(0, 400)
 large_num_arr = large_num_str.split('')
-large_num_arr.map {|n| large_num << n.to_i}
+large_num_arr.map! {|n| n.to_i}
 
-i = 3
+i = 0
 max_product = 0
 
-while i < large_num.length
-  product = large_num.slice(i, i + 3).reduce(1) {|acc, val| acc * val}
+while i < large_num_arr.length - 12
+  product = large_num_arr.slice(i, i + 12).reduce(1) {|acc, val| acc * val}
   if product > max_product
     max_product = product
   end
